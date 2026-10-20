@@ -1,0 +1,140 @@
+63 curves, every generator verified on-curve with order n; 299 hidden points computed.
+
+TEST 1  Hidden x-coordinates much shorter than chance (shortfall >= 20 bits below field size - log2(count))
+   secp224k1          G = 2P   x(P) = 0x3b78ce563f89a0ed9414f5aa28ad0d96d6795f9c63   (166 bits on a 224-bit field)
+   secp256k1          G = 2P   x(P) = 0x3b78ce563f89a0ed9414f5aa28ad0d96d6795f9c63   (166 bits on a 256-bit field)
+   sect113r1          G = 2P   x(P) = 0x3   (2 bits on a 113-bit field)
+   sect113r2          G = 2P   x(P) = 0x2   (2 bits on a 113-bit field)
+   sect163k1 (K-163)  G = 2P   x(P) = 0x23e21d6019e1211f6bd47ec180256e97   (126 bits on a 163-bit field)
+   c2pnb163v1         G = 2P   x(P) = 0x13152a6b92ceb34c0969c282324645cb   (125 bits on a 163-bit field)
+   c2tnb359v1         G = 76P   x(P) = 0x152d52a6b92ceb34c0969c282324645cb   (129 bits on a 359-bit field)
+   (all except sect113r2 were reported before; see the note)
+
+TEST 2  Blind, every pair of curves: longest run of hex digits shared by their hidden x-coordinates
+   38 digits  secp160k1 (G = 2P)  and  secp192k1 (G = 2P)
+              0x48ce563f89a0ed9414f5aa28ad0d96d6795f9c62
+              0x554123b78ce563f89a0ed9414f5aa28ad0d96d6795f9c66
+   38 digits  secp160k1 (G = 2P)  and  secp224k1 (G = 2P)
+              0x48ce563f89a0ed9414f5aa28ad0d96d6795f9c62
+              0x3b78ce563f89a0ed9414f5aa28ad0d96d6795f9c63
+   38 digits  secp160k1 (G = 2P)  and  secp256k1 (G = 2P)
+              0x48ce563f89a0ed9414f5aa28ad0d96d6795f9c62
+              0x3b78ce563f89a0ed9414f5aa28ad0d96d6795f9c63
+   41 digits  secp192k1 (G = 2P)  and  secp224k1 (G = 2P)
+              0x554123b78ce563f89a0ed9414f5aa28ad0d96d6795f9c66
+              0x3b78ce563f89a0ed9414f5aa28ad0d96d6795f9c63
+   41 digits  secp192k1 (G = 2P)  and  secp256k1 (G = 2P)
+              0x554123b78ce563f89a0ed9414f5aa28ad0d96d6795f9c66
+              0x3b78ce563f89a0ed9414f5aa28ad0d96d6795f9c63
+   42 digits  secp224k1 (G = 2P)  and  secp256k1 (G = 2P)
+              0x3b78ce563f89a0ed9414f5aa28ad0d96d6795f9c63
+              0x3b78ce563f89a0ed9414f5aa28ad0d96d6795f9c63
+   31 digits  sect131r1 (G = 2P)  and  sect131r2 (G = 2P)
+              0x10134db223421eb623422888a7879682
+              0x10134db223421eb623422888a7879684
+   46 digits  sect193r1 (G = 2P)  and  sect193r2 (G = 2P)
+              0x23daf8a23206f9c4f299d7b21a9c369137f2c84ae1aa04
+              0x23daf8a23206f9c4f299d7b21a9c369137f2c84ae1aa04
+   29 digits  c2pnb163v1 (G = 2P)  and  c2tnb359v1 (G = 76P)
+              0x13152a6b92ceb34c0969c282324645cb
+              0x152d52a6b92ceb34c0969c282324645cb
+   39 digits  c2pnb163v2 (G = 2P)  and  c2pnb163v3 (G = 2P)
+              0x7f69989546103d79329fcc3d74880f33bbe803cb
+              0x7af69989546103d79329fcc3d74880f33bbe803cb
+   47 digits  c2tnb191v1 (G = 2P)  and  c2tnb191v2 (G = 4P)
+              0x3388477117474774774375771981418781cabe0477727714
+              0x3388477117474774774375771981418781cabe047772771d
+   47 digits  c2tnb191v1 (G = 2P)  and  c2tnb191v3 (G = 6P)
+              0x3388477117474774774375771981418781cabe0477727714
+              0x3388477117474774774375771981418781cabe0477727710
+   47 digits  c2tnb191v1 (G = 2P)  and  c2tnb239v1 (G = 4P)
+              0x3388477117474774774375771981418781cabe0477727714
+              0x5757157563388477117474774774375771981418781cabe0477727712
+   48 digits  c2tnb191v1 (G = 2P)  and  c2tnb239v2 (G = 6P)
+              0x3388477117474774774375771981418781cabe0477727714
+              0x5757157563388477117474774774375771981418781cabe0477727714
+   47 digits  c2tnb191v2 (G = 4P)  and  c2tnb191v3 (G = 6P)
+              0x3388477117474774774375771981418781cabe047772771d
+              0x3388477117474774774375771981418781cabe0477727710
+   47 digits  c2tnb191v2 (G = 4P)  and  c2tnb239v1 (G = 4P)
+              0x3388477117474774774375771981418781cabe047772771d
+              0x5757157563388477117474774774375771981418781cabe0477727712
+   47 digits  c2tnb191v2 (G = 4P)  and  c2tnb239v2 (G = 6P)
+              0x3388477117474774774375771981418781cabe047772771d
+              0x5757157563388477117474774774375771981418781cabe0477727714
+   47 digits  c2tnb191v3 (G = 6P)  and  c2tnb239v1 (G = 4P)
+              0x3388477117474774774375771981418781cabe0477727710
+              0x5757157563388477117474774774375771981418781cabe0477727712
+   47 digits  c2tnb191v3 (G = 6P)  and  c2tnb239v2 (G = 6P)
+              0x3388477117474774774375771981418781cabe0477727710
+              0x5757157563388477117474774774375771981418781cabe0477727714
+   56 digits  c2tnb239v1 (G = 4P)  and  c2tnb239v2 (G = 6P)
+              0x5757157563388477117474774774375771981418781cabe0477727712
+              0x5757157563388477117474774774375771981418781cabe0477727714
+   pairs by longest shared run: 2: 502, 3: 1035, 4: 340, 5: 53, 6: 3, 29: 1, 31: 1, 38: 3, 39: 1, 41: 2, 42: 1, 46: 1, 47: 8, 48: 1, 56: 1 
+
+TEST 3  Blind: hidden x-coordinates that share a long run with another curve's PUBLISHED generator x
+   27 digits  hidden x of secp112r2 (G = 4P)  vs  published Gx of secp112r1
+              0x9487239995a5ee76b55f9c2f098
+              0x9487239995a5ee76b55f9c2f098
+   32 digits  hidden x of secp128r2 (G = 4P)  vs  published Gx of secp128r1
+              0x161ff7528b899b2d0c28607ca52c5b86
+              0x161ff7528b899b2d0c28607ca52c5b86
+   23 digits  hidden x of secp160r2 (G = 2P)  vs  published Gx of secp160r1
+              0x4a96b5688ef573284664698e81e1510fae4e8422
+              0x4a96b5688ef573284664698968c38bb913cbfc82
+   44 digits  hidden x of sect193r1 (G = 2P)  vs  published Gx of c2tnb191v1
+              0x23daf8a23206f9c4f299d7b21a9c369137f2c84ae1aa04
+              0x36b3daf8a23206f9c4f299d7b21a9c369137f2c84ae1aa0d
+   44 digits  hidden x of sect193r2 (G = 2P)  vs  published Gx of c2tnb191v1
+              0x23daf8a23206f9c4f299d7b21a9c369137f2c84ae1aa04
+              0x36b3daf8a23206f9c4f299d7b21a9c369137f2c84ae1aa0d
+   39 digits  hidden x of c2pnb163v2 (G = 2P)  vs  published Gx of c2pnb163v1
+              0x7f69989546103d79329fcc3d74880f33bbe803cb
+              0x7af69989546103d79329fcc3d74880f33bbe803cb
+   41 digits  hidden x of c2pnb163v3 (G = 2P)  vs  published Gx of c2pnb163v1
+              0x7af69989546103d79329fcc3d74880f33bbe803cb
+              0x7af69989546103d79329fcc3d74880f33bbe803cb
+   comparisons by longest shared run: 0: 7, 1: 135, 2: 7980, 3: 9391, 4: 961, 5: 56, 6: 1, 23: 1, 27: 1, 32: 1, 39: 1, 41: 1, 44: 2 
+
+TEST 4  Blind: hex-digit unevenness (chi-square, 15 d.f.); random strings of these lengths essentially never exceed 60
+   chi2 110.0  hidden x of c2tnb239v2 (G = 6P)
+              0x5757157563388477117474774774375771981418781cabe0477727714
+   chi2 106.6  hidden x of c2tnb239v1 (G = 4P)
+              0x5757157563388477117474774774375771981418781cabe0477727712
+   chi2 100.0  hidden x of c2tnb191v1 (G = 2P)
+              0x3388477117474774774375771981418781cabe0477727714
+   chi2  96.0  hidden x of c2tnb191v3 (G = 6P)
+              0x3388477117474774774375771981418781cabe0477727710
+   chi2  95.3  hidden x of c2tnb191v2 (G = 4P)
+              0x3388477117474774774375771981418781cabe047772771d
+   chi2  93.1  hidden x of c2tnb239v3 (G = 10P)
+              0x12398377777737777a665c55656d556f567b6565555511993737177373ae
+   chi2  57.0  published Gx of sect163r1
+              0x369979697ab43897789566789567f787a7876a654
+   (largest chi-square among 20,000 random 48-digit strings: 51.3)
+
+CLAIMS IN THE NOTE
+   PASS  sect113r1: G = 2P with x(P) = 3
+   PASS  sect113r2: G = 2P with x(P) = 2
+   PASS  sect163k1 (NIST K-163): 32-hex-digit x(P), G = 2P
+   PASS  c2pnb163v1: 32-hex-digit x(P), G = 2P
+   PASS  sect131r1 / r2: one 31-digit body, last digit 2 / 4
+   PASS  sect193r1 and sect193r2: identical x(P)
+   PASS  c2tnb191v1 G = 2P, x(P) = 3.B.4
+   PASS  c2tnb191v2 G = 4P, x(P) = 3.B.d
+   PASS  c2tnb191v3 G = 6P, x(P) = 3.B.0
+   PASS  c2tnb239v1 G = 4P, x(P) = 5757157563.B.2
+   PASS  c2tnb239v2 G = 6P, x(P) = 5757157563.B.4
+   PASS  secp112r2 G = 4P, x(P) = published Gx of secp112r1
+   PASS  secp128r2 G = 4P, x(P) = published Gx of secp128r1
+   PASS  c2pnb163v3 G = 2P, x(P) = published Gx of c2pnb163v1
+   PASS  c2pnb163v2 G = 2P, x(P) = c2pnb163v1 Gx less one digit
+   PASS  secp160r2 G = 2P, x(P) starts with 23 digits of secp160r1 Gx
+   PASS  sect193r1/r2 x(P) contains 44 digits of c2tnb191v1 Gx
+   PASS  c2tnb359v1 G = 76P, 129-bit x(P) sharing 29 digits with c2pnb163v1's hidden x
+   PASS  c2tnb239v3 G = 10P, x(P) with highly uneven digits (chi-square > 90)
+   PASS  c2tnb431r1 G = 10080P for the patterned x(P) 38f78976...b66610
+   PASS  secp256k1 (Bitcoin) G = 2P, x(P) = 0x3b78ce...9c63
+
+21 of 21 claims pass.

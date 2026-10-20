@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you refer to this result, please cite the write-up."
+title: "certicom-generators: hidden values shared and reused across standard elliptic-curve generators"
+version: "1.0"
+abstract: "Dividing each SEC 2 / ANSI X9.62 generator by its cofactor (or by 2) gives structured hidden values on 25 of 69 standard curves; on 18 of them the values are shared between sibling curves, reused from earlier curves, or too uneven to be random."
+authors:
+  - family-names: Hamadeh
+    given-names: Khalid
+date-released: 2026-10-20
+license: MIT
+repository-code: "https://github.com/khalid-hamadeh/certicom-generators"
+url: "https://khalidhamadeh.com/writing/certicom-generators"
+preferred-citation:
+  type: article
+  title: "The recycled numbers inside Certicom's curve generators"
+  authors:
+    - family-names: Hamadeh
+      given-names: Khalid
+  year: 2026
+  url: "https://khalidhamadeh.com/writing/certicom-generators"
